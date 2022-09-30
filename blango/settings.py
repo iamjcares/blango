@@ -47,6 +47,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'blango_auth',
     'blog',
+    'drf_yasg',
     'rest_framework',
     'rest_framework.authtoken'
 ]
@@ -90,6 +91,13 @@ TEMPLATES = [
         },
     },
 ]
+
+SWAGGER_SETTINGS = {
+    "SECURITY_DEFINITIONS": {
+        "Token": {"type": "apiKey", "name": "Authorization", "in": "header"},
+        "Basic": {"type": "basic"},
+    }
+}
 
 WSGI_APPLICATION = 'blango.wsgi.application'
 
